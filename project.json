@@ -1,0 +1,62 @@
+{
+  "name": "FlowDrivenFramework_GlobalTemplate",
+  "projectId": "d4cab257-c0e4-46ff-942b-88566e7ca524",
+  "description": "A flexible process template that can run in different setups as Producer (Linear), Consumer (Transactional) or Hybrid.",
+  "main": "Main.xaml",
+  "dependencies": {
+    "Autossential.Activities": "[3.3.5]",
+    "Autossential.Configuration.Activities": "[1.1.0]",
+    "UiPath.Excel.Activities": "[2.23.5]",
+    "UiPath.System.Activities": "[24.10.4]",
+    "UiPath.UIAutomation.Activities": "[24.10.3]"
+  },
+  "webServices": [],
+  "entitiesStores": [],
+  "schemaVersion": "4.0",
+  "studioVersion": "24.10.4.0",
+  "projectVersion": "1.0.0",
+  "runtimeOptions": {
+    "autoDispose": false,
+    "netFrameworkLazyLoading": false,
+    "isPausable": true,
+    "isAttended": false,
+    "requiresUserInteraction": true,
+    "supportsPersistence": false,
+    "workflowSerialization": "DataContract",
+    "excludedLoggedData": [
+      "Private:*",
+      "*password*"
+    ],
+    "executionType": "Workflow",
+    "readyForPiP": false,
+    "startsInPiP": false,
+    "mustRestoreAllDependencies": true,
+    "pipType": "ChildSession"
+  },
+  "designOptions": {
+    "projectProfile": "Developement",
+    "outputType": "Process",
+    "libraryOptions": {
+      "includeOriginalXaml": false,
+      "privateWorkflows": []
+    },
+    "processOptions": {
+      "ignoredFiles": []
+    },
+    "fileInfoCollection": [],
+    "saveToCloud": false
+  },
+  "expressionLanguage": "VisualBasic",
+  "entryPoints": [
+    {
+      "filePath": "Main.xaml",
+      "uniqueId": "a4067607-0738-4bba-98ec-b3d58eaed9ad",
+      "input": [],
+      "output": []
+    }
+  ],
+  "isTemplate": true,
+  "templateProjectData": {},
+  "publishData": {},
+  "targetFramework": "Windows"
+}

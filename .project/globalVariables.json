@@ -1,0 +1,10 @@
+[
+  {
+    "Constant": false,
+    "Name": "g_Config",
+    "TypeFullyQualifiedName": "Autossential.Configuration.Core.ConfigSection, Autossential.Configuration.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
+    "UnresolvedTypeFullyQualifiedName": null,
+    "Expression": null,
+    "IsLiteral": false
+  }
+]
