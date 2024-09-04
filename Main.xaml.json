@@ -52,18 +52,6 @@
       "IsPrincipal": true,
       "ArgumentType": 0,
       "DataSourceItems": null
-    },
-    {
-      "Name": "in_ConfigType",
-      "DisplayName": "in_ConfigType",
-      "Category": null,
-      "Tooltip": "Define the configuration file that will be loaded. The values can be Yaml or Excel.\nIf an invalid name is passed, it will load the Yaml file.",
-      "Placeholder": null,
-      "Widget": null,
-      "IsRequired": false,
-      "IsPrincipal": true,
-      "ArgumentType": 0,
-      "DataSourceItems": null
     }
   ]
 }
