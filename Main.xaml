@@ -33,6 +33,8 @@
       <x:String>UiPath.Core.Activities</x:String>
       <x:String>System.Linq.Expressions</x:String>
       <x:String>System.Numerics</x:String>
+      <x:String>System.Windows.Forms</x:String>
+      <x:String>System.Drawing</x:String>
     </scg:List>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
@@ -91,9 +93,13 @@
       <AssemblyReference>System.Collections.NonGeneric</AssemblyReference>
       <AssemblyReference>System.Linq.Expressions</AssemblyReference>
       <AssemblyReference>System.Runtime.Numerics</AssemblyReference>
+      <AssemblyReference>System.Windows.Forms</AssemblyReference>
+      <AssemblyReference>System.Windows.Forms.Primitives</AssemblyReference>
+      <AssemblyReference>System.Drawing.Primitives</AssemblyReference>
+      <AssemblyReference>System.Drawing.Common</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <StateMachine InitialState="{x:Reference __ReferenceID1}" sap2010:Annotation.AnnotationText="This template uses a text-based configuration file in YAML standards which is read with Autossential.Configuration.Activities package resulting in a ConfigSection object which is more rich in terms of features than a Dictionary object.&#xA;&#xA;This specific version of the framework take advantage on the global variable available natively from UiPath to keep the configuration data, this will help accelerate the development by skipping the necessity to pass the config variable through an argument in every flow that is needed.&#xA;&#xA;* SAMPLE CODE *&#xA;&#xA;This template comes with a sample code embedded. Just run it and see the results on Data\Sample.csv&#xA;Before start using this template for your project, please make sure to remove the sample code (marked with &quot;Remove Me&quot;) on the following files:&#xA;&#xA;- Framework\Process\Consumer.xaml&#xA;- Framework\Process\Producer.xaml&#xA;- Framework\Actions\Events\OnTransactionComplete.xaml" DisplayName="State Machine" sap:VirtualizedContainerService.HintSize="1244,662" sap2010:WorkflowViewState.IdRef="StateMachine_1">
+  <StateMachine InitialState="{x:Reference __ReferenceID1}" sap2010:Annotation.AnnotationText="This template uses a text-based configuration file in YAML standards which is read with Autossential.Configuration.Activities package resulting in a ConfigSection object which is more rich in terms of features than a Dictionary object.&#xA;&#xA;This specific version of the framework take advantage on the global variable available natively from UiPath to keep the configuration data, this will help accelerate the development by skipping the necessity to pass the config variable through an argument in every flow that is needed.&#xA;&#xA;* SAMPLE CODE *&#xA;&#xA;This template comes with a sample code embedded. Just run it and see the results on Data\Sample.csv&#xA;Before start using this template for your project, please make sure to remove the sample code (marked with &quot;Remove Me&quot;) on the following files:&#xA;&#xA;- Framework\Process\Consumer.xaml&#xA;- Framework\Process\Producer.xaml&#xA;- Framework\Actions\Events\OnTransactionComplete.xaml" DisplayName="State Machine" sap:VirtualizedContainerService.HintSize="1065,618.04" sap2010:WorkflowViewState.IdRef="StateMachine_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -162,17 +168,17 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </State>
-    <State x:Name="__ReferenceID1" sap2010:Annotation.AnnotationText="Reads the configuration file and initialize applications used in the process." DisplayName="INIT" sap:VirtualizedContainerService.HintSize="676,2180" sap2010:WorkflowViewState.IdRef="State_2">
+    <State x:Name="__ReferenceID1" sap2010:Annotation.AnnotationText="Reads the configuration file and initialize applications used in the process." DisplayName="INIT" sap:VirtualizedContainerService.HintSize="620,2283" sap2010:WorkflowViewState.IdRef="State_2">
       <State.Entry>
-        <TryCatch DisplayName="Tries to execute the initialization procedures" sap:VirtualizedContainerService.HintSize="630,1734" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+        <TryCatch DisplayName="Tries to execute the initialization procedures" sap:VirtualizedContainerService.HintSize="574,1837" sap2010:WorkflowViewState.IdRef="TryCatch_1">
           <TryCatch.Try>
-            <Sequence DisplayName="Initialization procedures" sap:VirtualizedContainerService.HintSize="592,1506" sap2010:WorkflowViewState.IdRef="Sequence_3">
+            <Sequence DisplayName="Initialization procedures" sap:VirtualizedContainerService.HintSize="536,1609" sap2010:WorkflowViewState.IdRef="Sequence_3">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <Assign DisplayName="Resets BotException" sap:VirtualizedContainerService.HintSize="530,114" sap2010:WorkflowViewState.IdRef="Assign_1">
+              <Assign DisplayName="Resets BotException" sap:VirtualizedContainerService.HintSize="502,114" sap2010:WorkflowViewState.IdRef="Assign_1">
                 <Assign.To>
                   <OutArgument x:TypeArguments="s:Exception">[BotException]</OutArgument>
                 </Assign.To>
@@ -180,7 +186,7 @@
                   <InArgument x:TypeArguments="s:Exception">[Nothing]</InArgument>
                 </Assign.Value>
               </Assign>
-              <If sap2010:Annotation.AnnotationText="An uninitialized Config object indicates that it is the first run of the process." Condition="[g_Config Is Nothing]" DisplayName="If is first-run, read configuration file and initialize settings" sap:VirtualizedContainerService.HintSize="530,905" sap2010:WorkflowViewState.IdRef="If_4">
+              <If sap2010:Annotation.AnnotationText="An uninitialized Config object indicates that it is the first run of the process." Condition="[g_Config Is Nothing]" DisplayName="If is first-run, read configuration file and initialize settings" sap:VirtualizedContainerService.HintSize="502,1036" sap2010:WorkflowViewState.IdRef="If_4">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
@@ -189,12 +195,13 @@
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
                 <If.Then>
-                  <Sequence DisplayName="Executes the procedures on the first run" sap:VirtualizedContainerService.HintSize="496,601" sap2010:WorkflowViewState.IdRef="Sequence_2">
+                  <Sequence DisplayName="Executes the procedures on the first run" sap:VirtualizedContainerService.HintSize="468,746" sap2010:WorkflowViewState.IdRef="Sequence_2">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
+                    <ui:LogMessage DisplayName="Log Message screen resolution" sap:VirtualizedContainerService.HintSize="434,173" sap2010:WorkflowViewState.IdRef="LogMessage_12" Message="[String.Format(&quot;The primary screen resolution is: {0} x {1}&quot;, Screen.PrimaryScreen.Bounds.Width.ToString, Screen.PrimaryScreen.Bounds.Height.ToString)]" />
                     <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke InitAllSettings workflow" sap:VirtualizedContainerService.HintSize="434,204" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Framework\System\Initialization\InitAllSettings.xaml">
                       <ui:InvokeWorkflowFile.Arguments>
                         <scg:Dictionary x:TypeArguments="x:String, Argument" />
@@ -219,7 +226,7 @@
                   </Sequence>
                 </If.Then>
                 <If.Else>
-                  <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="416,103" sap2010:WorkflowViewState.IdRef="Sequence_18">
+                  <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="416,89" sap2010:WorkflowViewState.IdRef="Sequence_18">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -228,7 +235,7 @@
                   </Sequence>
                 </If.Else>
               </If>
-              <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke FinalizeApps workflow" sap:VirtualizedContainerService.HintSize="530,204" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="Framework\System\Applications\FinalizeApps.xaml">
+              <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke FinalizeApps workflow" sap:VirtualizedContainerService.HintSize="502,204" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="Framework\System\Applications\FinalizeApps.xaml">
                 <ui:InvokeWorkflowFile.Arguments>
                   <scg:Dictionary x:TypeArguments="x:String, Argument" />
                 </ui:InvokeWorkflowFile.Arguments>
@@ -239,7 +246,7 @@
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
               </ui:InvokeWorkflowFile>
-              <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke StartAllApps workflow" sap:VirtualizedContainerService.HintSize="530,195" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" UnSafe="False" WorkflowFileName="Framework\Actions\Applications\StartAllApps.xaml">
+              <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke StartAllApps workflow" sap:VirtualizedContainerService.HintSize="502,195" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" UnSafe="False" WorkflowFileName="Framework\Actions\Applications\StartAllApps.xaml">
                 <ui:InvokeWorkflowFile.Arguments>
                   <scg:Dictionary x:TypeArguments="x:String, Argument" />
                 </ui:InvokeWorkflowFile.Arguments>
@@ -253,7 +260,7 @@
             </Sequence>
           </TryCatch.Try>
           <TryCatch.Catches>
-            <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="596,22" sap2010:WorkflowViewState.IdRef="Catch`1_1">
+            <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="540,22" sap2010:WorkflowViewState.IdRef="Catch`1_1">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -264,7 +271,7 @@
                 <ActivityAction.Argument>
                   <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
                 </ActivityAction.Argument>
-                <Assign sap2010:Annotation.AnnotationText="Failures during initialization leads the process to FAILURE state." DisplayName="Set exception to BotException" sap:VirtualizedContainerService.HintSize="434,81" sap2010:WorkflowViewState.IdRef="Assign_5">
+                <Assign sap2010:Annotation.AnnotationText="Failures during initialization leads the process to FAILURE state." DisplayName="Set exception to BotException" sap:VirtualizedContainerService.HintSize="434,113" sap2010:WorkflowViewState.IdRef="Assign_5">
                   <Assign.To>
                     <OutArgument x:TypeArguments="s:Exception">[BotException]</OutArgument>
                   </Assign.To>
@@ -560,9 +567,7 @@
                           <Transition.To>
                             <x:Reference>__ReferenceID1</x:Reference>
                           </Transition.To>
-                          <Transition.Condition>
-                            <VisualBasicValue x:TypeArguments="x:Boolean" DisplayName="Visual basic value" ExpressionText="FailsCount &lt;= g_Config.AsInt(&quot;Recover/MaxFailsCount&quot;)" />
-                          </Transition.Condition>
+                          <Transition.Condition>[FailsCount &lt;= g_Config.AsInt("Recover/MaxFailsCount")]</Transition.Condition>
                         </Transition>
                       </State.Transitions>
                     </State>
